@@ -55,6 +55,9 @@ module Rpush
               'apns' => apns_config,
               'token' => device_token
             }
+            # Android does not appear to handle content_available anymore. Instead "priority" should be used
+            # with "low" being a background only message. APN however should support this field.
+            # json['content_available'] = content_available if content_available
 
             json['notification'] = root_notification if notification
             { 'message' => json }
