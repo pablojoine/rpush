@@ -35,12 +35,12 @@ module Rpush
           # we do a little conversion here.
           def priority=(priority)
             case priority
-              when 'high', FCM_PRIORITY_HIGH
-                super(FCM_PRIORITY_HIGH)
-              when 'normal', FCM_PRIORITY_NORMAL
-                super(FCM_PRIORITY_NORMAL)
-              else
-                errors.add(:priority, 'must be one of either "normal" or "high"')
+            when 'high', FCM_PRIORITY_HIGH
+              super(FCM_PRIORITY_HIGH)
+            when 'normal', FCM_PRIORITY_NORMAL
+              super(FCM_PRIORITY_NORMAL)
+            else
+              errors.add(:priority, 'must be one of either "normal" or "high"')
             end
           end
 
